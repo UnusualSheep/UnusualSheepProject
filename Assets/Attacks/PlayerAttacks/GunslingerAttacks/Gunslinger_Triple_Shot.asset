@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4e2b6952bc75d4c90b1cd0c4518335, type: 3}
+  m_Name: Gunslinger_Triple_Shot
+  m_EditorClassIdentifier: 
+  abilityName: Triple Shot
+  levelRequired: 2
+  abValue: 30
+  mpCost: 3
+  abilityType: 0
+  abilityOutput: 0
+  abilityTarget: 3
+  attackParticle: {fileID: 1337198075554910, guid: 1641bba971b838e41bcc0eb3af33a760, type: 3}

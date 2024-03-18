@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4e2b6952bc75d4c90b1cd0c4518335, type: 3}
+  m_Name: MageRevive
+  m_EditorClassIdentifier: 
+  abilityName: Revive
+  levelRequired: 0
+  abValue: -25
+  mpCost: 10
+  abilityType: 0
+  abilityOutput: 1
+  abilityTarget: 2
+  attackParticle: {fileID: 7489550461818942965, guid: 2028865b0c0ec9044999f28a0a3b6c46, type: 3}

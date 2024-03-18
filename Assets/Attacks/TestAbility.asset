@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4e2b6952bc75d4c90b1cd0c4518335, type: 3}
+  m_Name: TestAbility
+  m_EditorClassIdentifier: 
+  abilityName: TestAbility
+  levelRequired: 0
+  abValue: 10
+  mpCost: 0
+  abilityType: 0
+  abilityOutput: 0
+  abilityTarget: 2
+  attackParticle: {fileID: 0}
+  animation: {fileID: 7400000, guid: 7861590bf85f1e344b5e9f2e658123ea, type: 2}
