@@ -25,11 +25,11 @@ public class MovingToLocation_State : BaseState
         //once in position either attack or move back
         if (_csm.unitData.charControl._target != null)
         {
-            if (_csm.unitData.charControl.selectedAttack.abilityType == AbilityType.Melee)
+            if (_csm.unitData.charControl.selectedAttack.abilityRange == AbilityRange.Melee)
             {
                 destination = _csm.unitData.charControl._target.meleeRange.position;
             }
-            else if (_csm.unitData.charControl.selectedAttack.abilityType == AbilityType.Ranged)
+            else if (_csm.unitData.charControl.selectedAttack.abilityRange == AbilityRange.Ranged)
             {
                 destination = _csm.unitData.charControl.rangedPosition.position;
             }

@@ -489,10 +489,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Slime
   level: 1
+  curXp: 0
+  xpToLevel: 0
   maxHp: 30
   curHp: 30
   maxMp: 20
   curMp: 20
+  strength: 4
+  constitution: 4
+  dexterity: 4
+  magic: 4
+  spirit: 4
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 2.5

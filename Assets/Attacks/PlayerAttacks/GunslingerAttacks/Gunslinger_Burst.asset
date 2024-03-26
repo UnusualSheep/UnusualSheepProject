@@ -16,7 +16,8 @@ MonoBehaviour:
   levelRequired: 0
   abValue: 100
   mpCost: 0
-  abilityType: 1
+  abilityRange: 0
+  abilityType: 0
   abilityOutput: 0
   abilityTarget: 3
   attackParticle: {fileID: 1337198075554910, guid: 1641bba971b838e41bcc0eb3af33a760, type: 3}

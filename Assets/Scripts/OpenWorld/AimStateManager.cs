@@ -8,6 +8,7 @@ public class AimStateManager : MonoBehaviour
     public Cinemachine.AxisState xAxis, yAxis;
     [SerializeField] Transform cameraFollowPosition;
     [SerializeField] MovementStateMachine movementStateMachine;
+    [SerializeField] GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,14 @@ public class AimStateManager : MonoBehaviour
         {
             xAxis.Update(Time.deltaTime);
             yAxis.Update(Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(true);
+            }
         }
     }
 

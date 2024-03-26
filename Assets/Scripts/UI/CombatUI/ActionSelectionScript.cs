@@ -53,7 +53,10 @@ public class ActionSelectionScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log(selectionIndex);
-            actionButtons[selectionIndex].onClick.Invoke();
+            if (actionButtons[selectionIndex].IsInteractable())
+            {
+                actionButtons[selectionIndex].onClick.Invoke();
+            }
         }
     }
 }

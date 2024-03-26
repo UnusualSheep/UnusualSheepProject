@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class WeaponSwapTest : MonoBehaviour
 {
-    [SerializeField] GameObject pistol;
-    [SerializeField] GameObject rifle;
-    [SerializeField] GameObject backRifle;
+    public ItemSO item;
 
 
-    public void PistolOut()
+    private void OnTriggerEnter(Collider other)
     {
-        pistol.SetActive(true);
-    }
-    public void PistolIn()
-    {
-        pistol.SetActive(false);
-    }
-
-    public void RifleOut()
-    {
-        backRifle.SetActive(false);
-        rifle.SetActive(true);
-    }
-    public void RifleIn()
-    {
-        backRifle.SetActive(true);
-        rifle.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            Inventory.Instance.AddToInventory(item);
+            Destroy(this);
+        }
     }
 }

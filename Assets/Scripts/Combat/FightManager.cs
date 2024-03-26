@@ -11,8 +11,6 @@ public class FightManager : MonoBehaviour
     public UnitData currentUnit;
     public bool unitAttacked = false;
 
-
-
     public GameObject enemySelectionCamera;
     public GameObject allySelectionCamera;
     public GameObject characterSelectedGraphic;
@@ -52,6 +50,30 @@ public class FightManager : MonoBehaviour
         currentUnit.charControl.selectedAttack = abiltySO;
         Debug.Log(currentUnit.name + " Selected: " + currentUnit.charControl.selectedAttack.name);
         SelectTarget();
+    }
+    public void UseItem(ItemSO itemSO)
+    {
+        currentUnit.charControl.selectedItem = itemSO;
+        Debug.Log(currentUnit.name + " Selected: " + currentUnit.charControl.selectedAttack.name);
+        SelectItemTarget();
+    }
+
+    public void SelectItemTarget()
+    {
+        bool targetSelected = false;
+        if (currentUnit == null || currentUnit.GetComponent<CombatStateMachine>().currentState == null) { return; }
+        if (currentUnit.charControl.selectedItem.itemTarget == AbilityTarget.Enemy)
+        {
+            enemySelectionCamera.SetActive(true);
+            if (!targetSelected)
+            {
+                SetTargetGraphicPosition(enemyCharacters[0]);
+            }
+        }
+        else if (currentUnit.charControl.selectedItem.itemTarget == AbilityTarget.Ally || currentUnit.charControl.selectedItem.itemTarget == AbilityTarget.KOAllies)
+        {
+            allySelectionCamera.SetActive(true);
+        }
     }
 
     public void SelectTarget()
@@ -154,7 +176,23 @@ public class FightManager : MonoBehaviour
    //     friendlyCharacters = FindObjectsOfType<CharacterControl>().ToList().FindAll(x => x.characterTeam == CharacterTeam.Friendly);
         enemyCharacters = FindObjectsOfType<CharacterControl>().ToList().FindAll(x => x.characterTeam == CharacterTeam.Enemy);
     }
-
+    public void ApplyBonuses()
+    {
+        int leaderIndex = 0;
+        for (int i = 0; i < friendlyCharacters.Count; i++)
+        {
+            if (friendlyCharacters[i].GetComponent<UnitData>().isLeader)
+            {
+                leaderIndex = i;
+            }
+        }
+        UnitData leaderUnit = friendlyCharacters[leaderIndex].GetComponent<UnitData>();
+        foreach(var character in friendlyCharacters)
+        {
+            character.GetComponent<UnitData>().GetLeaderBonus(leaderUnit.leaderBuff, leaderUnit.leaderDebuff, leaderUnit.buffPercent, leaderUnit.debuffPercent);
+            Debug.Log(character.name + character.GetComponent<UnitData>().dexterityBouns);
+        }
+    }
     public void SpawnUI()
     {
         foreach (Transform child in nameHolder.transform)
@@ -171,6 +209,7 @@ public class FightManager : MonoBehaviour
             UIManager.Instance.SpawnRow(out player.physicUI, player.unitData);
             player.Init();
             character.GetComponent<UnitData>().currentSpeed = 0;
+
         }
     }
 

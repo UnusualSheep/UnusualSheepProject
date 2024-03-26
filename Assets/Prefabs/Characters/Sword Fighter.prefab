@@ -2907,11 +2907,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Furious Bryan
-  level: 3
+  level: 1
+  curXp: 10
+  xpToLevel: 100
   maxHp: 100
   curHp: 100
   maxMp: 20
   curMp: 20
+  strength: 15
+  constitution: 0
+  dexterity: 5
+  magic: 5
+  spirit: 5
   burstPointLimit: 100
   currentBurstPoints: 75
   speedLimit: 0.5

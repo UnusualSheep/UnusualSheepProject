@@ -2593,11 +2593,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Ruby
-  level: 3
+  level: 1
+  curXp: 0
+  xpToLevel: 100
   maxHp: 100
   curHp: 100
   maxMp: 20
   curMp: 20
+  strength: 5
+  constitution: 10
+  dexterity: 5
+  magic: 10
+  spirit: 10
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 0.5

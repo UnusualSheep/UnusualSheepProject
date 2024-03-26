@@ -6299,10 +6299,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: British Soldier
   level: 1
+  curXp: 0
+  xpToLevel: 0
   maxHp: 50
   curHp: 50
   maxMp: 10
   curMp: 10
+  strength: 4
+  constitution: 4
+  dexterity: 6
+  magic: 5
+  spirit: 4
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 3

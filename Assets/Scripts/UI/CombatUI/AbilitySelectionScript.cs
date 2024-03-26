@@ -85,9 +85,12 @@ public class AbilitySelectionScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
-            abilityButtonsList[selectionIndex].onClick.Invoke();
+            if (abilityButtonsList[selectionIndex].IsInteractable())
+            {
+                abilityButtonsList[selectionIndex].onClick.Invoke();
+            }
         }
-        else if(Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             actionWindow.SetActive(true);
             transform.gameObject.SetActive(false);

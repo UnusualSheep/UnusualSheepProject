@@ -12,17 +12,24 @@ public class AbiltySO : ScriptableObject
     public int abValue = 10;
     public int mpCost = 1;
 
-    public AbilityType abilityType = AbilityType.Melee;
+    public AbilityRange abilityRange = AbilityRange.Melee;
+    public AbilityType abilityType = AbilityType.Physical;
     public AbilityOutput abilityOutput = AbilityOutput.Damage;
     public AbilityTarget abilityTarget = AbilityTarget.Enemy;
 
     public GameObject attackParticle;
 }
 
-public enum AbilityType
+public enum AbilityRange
 {
     Ranged,
     Melee,
+}
+
+public enum AbilityType
+{
+    Physical,
+    Magic
 }
 
 public enum AbilityTarget

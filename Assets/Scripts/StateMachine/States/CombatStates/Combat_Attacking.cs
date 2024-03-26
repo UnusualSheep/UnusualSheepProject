@@ -13,12 +13,14 @@ public class Combat_Attacking : BaseState
     public override void Enter()
     {
         base.Enter();
-        isMelee = (_csm.unitData.charControl.selectedAttack.abilityType == AbilityType.Melee)
+        isMelee = (_csm.unitData.charControl.selectedAttack.abilityRange == AbilityRange.Melee)
                    ? true : false;
         _csm.characterControl.SetAnimationStoppedFalse();
         //perform attack
         _csm.transform.LookAt(_csm.unitData.charControl._target.transform);
+        //switch camera for melee attacks
         if (isMelee){ _csm.unitData.charControl._target.SwitchCameras(); }
+
         _csm.characterControl.PerformAttack(_csm.characterControl.selectedAttack);
 
     }

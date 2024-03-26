@@ -39,6 +39,12 @@ public class MovementIdle_State : BaseState
             }
             stateMachine.ChangeState(((MovementStateMachine)stateMachine).movement_State);
         }
+        /*
+        if (!_msm.characterController.isGrounded)
+        {
+            _msm.animator.SetTrigger("Falling");
+        }
+        */
     }
     public override void UpdatePhysics()
     {

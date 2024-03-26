@@ -33,9 +33,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject enemyAbilityTextWindow;
     public TextMeshProUGUI enemyAbilityText;
 
+    [Header("Item Menu")]
+    public GameObject itemWindow;
+    public Transform itemUIHolder;
+    public GameObject itemUIPrefab;
+    public TextMeshProUGUI itemNameUI;
+    public TextMeshProUGUI itemDescriptionUI;
+
     public static int currentUICount = 1 ;
 
     public AbilitySelectionScript abilitySelection;
+    public AbilitySelectionScript itemSelection;
     private void Awake()
     {
         Instance = this;
@@ -79,7 +87,32 @@ public class UIManager : MonoBehaviour
                 abilitySelection.abilityButtonsList.Add(tempAbilityPrefab.GetComponent<Button>());
             }
         }
-  //      abilitySelection.abilityButtonsList[0].onClick.Invoke();
+    }
+
+    public void FillItemWindow()
+    {
+        CleanItemWindow();
+        itemSelection.abilityButtonsList = new List<Button>();
+        itemSelection.selectionIndex = 0;
+        List<Inventory.ItemArray> itemArray = new List<Inventory.ItemArray>();
+        foreach(Inventory.ItemArray item in Inventory.Instance.items)
+        {
+            if (item.quantity > 0)
+            {
+                itemArray.Add(item);
+            }
+        }
+
+        for (int i = 0; i < itemArray.Count; i++)
+        {
+            GameObject tempItemPrefab = Instantiate(itemUIPrefab);
+            tempItemPrefab.transform.SetParent(itemUIHolder);
+
+            ItemUI tempItemUI = tempItemPrefab.GetComponent<ItemUI>();
+            tempItemUI.itemIndex = i;
+            tempItemUI.Init(Inventory.Instance.items[i].item.name);
+            itemSelection.abilityButtonsList.Add(tempItemPrefab.GetComponent<Button>());
+        }
     }
     public void EnableActionPanel()
     {
@@ -107,6 +140,16 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void DeselectOtherItemsUI(ItemUI thisItemUI)
+    {
+        foreach (var item in FindObjectsOfType<ItemUI>())
+        {
+            if (item != thisItemUI)
+            {
+                item.DeselectUI();
+            }
+        }
+    }
     public void DisplayAbilityWindow()
     {
         abilityTextWindow.SetActive(true);
@@ -126,6 +169,12 @@ public class UIManager : MonoBehaviour
         mpRequiredText.text = abilityMp + " / " + charCurMp;
     }
 
+    public void SetItemUI(string name, string description)
+    {
+        itemNameUI.text = name;
+        itemDescriptionUI.text = description;
+    }
+
     public void SetAbilityText(string abilityName, CharacterTeam team)
     {
         switch (team)
@@ -141,6 +190,13 @@ public class UIManager : MonoBehaviour
     void CleanAbilityWindow()
     {
         foreach (Transform item in abilityUIHolder)
+        {
+            Destroy(item.gameObject);
+        }
+    }
+    void CleanItemWindow()
+    {
+        foreach (Transform item in itemUIHolder)
         {
             Destroy(item.gameObject);
         }

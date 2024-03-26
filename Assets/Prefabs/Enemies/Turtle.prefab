@@ -502,10 +502,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Turtle
   level: 1
+  curXp: 0
+  xpToLevel: 0
   maxHp: 75
   curHp: 75
   maxMp: 20
   curMp: 20
+  strength: 5
+  constitution: 10
+  dexterity: 5
+  magic: 5
+  spirit: 1
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 4

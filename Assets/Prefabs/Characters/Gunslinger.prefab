@@ -5462,11 +5462,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Jade
-  level: 3
+  level: 1
+  curXp: 0
+  xpToLevel: 100
   maxHp: 100
   curHp: 75
   maxMp: 20
   curMp: 20
+  strength: 5
+  constitution: 10
+  dexterity: 15
+  magic: 5
+  spirit: 5
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 0.5

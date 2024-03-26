@@ -50,6 +50,7 @@ public class RandomEncounter : MonoBehaviour
         }
 
         FightManager.Instance.PopulateTeams();
+        FightManager.Instance.ApplyBonuses();
         FightManager.Instance.SpawnUI();
         openWorldMap.SetActive(false);
         transitionScreen.SetActive(false);

@@ -16,6 +16,7 @@ MonoBehaviour:
   levelRequired: 2
   abValue: 50
   mpCost: 5
+  abilityRange: 0
   abilityType: 0
   abilityOutput: 0
   abilityTarget: 3

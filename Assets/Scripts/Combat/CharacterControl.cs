@@ -17,6 +17,7 @@ public class CharacterControl : MonoBehaviour
     public AbiltySO burstAttack;
     public AbiltySO selectedAttack;
     public AbiltySO[] abilities;
+    public ItemSO selectedItem;
 
     public CharacterControl _target;
     [HideInInspector]
