@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Win_State : BaseState
 {
+    private CombatStateMachine _csm;
     public Win_State(CombatStateMachine combatStateMachine) : base("Win_State", combatStateMachine)
     {
+        _csm = (CombatStateMachine)combatStateMachine;
     }
     public override void Enter()
     {
         base.Enter();
-        //do a little dance
+        _csm.animator.SetTrigger("Win");
     }
 
     public override void UpdateLogic()

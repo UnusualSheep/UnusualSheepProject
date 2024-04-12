@@ -10,8 +10,9 @@ public class UnitData : MonoBehaviour
     public string characterName = "Character Name";
     [Space(10)]
     public int level = 1;
-    [SerializeField] int curXp;
-    [SerializeField] int xpToLevel;
+    [SerializeField] public int curXp;
+    [SerializeField] public int xpToLevel;
+    [SerializeField] int goldReward;
     [Space(10)]
     public int maxHp = 100;
     public int curHp = 100;
@@ -100,6 +101,19 @@ public class UnitData : MonoBehaviour
             {
                 FightManager.Instance.deadEnemies.Add(charControl);
                 FightManager.Instance.enemyCharacters.Remove(charControl);
+                FightManager.Instance.xpReward += curXp;
+                FightManager.Instance.goldReward += goldReward;
+                ItemRewards itemRewards = GetComponent<ItemRewards>();
+                if (itemRewards != null)
+                {
+                    int rewardsToBeGiven;
+                    rewardsToBeGiven = Random.Range(0, itemRewards.itemRewards.Length);
+                    for(int i = 0; i < rewardsToBeGiven; i++)
+                    {
+                        int reward = Random.Range(0, itemRewards.itemRewards.Length);
+                        FightManager.Instance.itemRewards.Add(itemRewards.itemRewards[reward]);
+                    }
+                }
             }
         }
         if(curHp >= maxHp)
@@ -266,6 +280,29 @@ public class UnitData : MonoBehaviour
                 speedLimitBouns = debuff;
                 break;
         }
+    }
+
+
+    public void LevelUp()
+    {
+        level++;
+        curXp = curXp - xpToLevel;
+        xpToLevel = (int)(xpToLevel * 1.5f);
+
+        //Temp Level up
+        maxHp += (maxHp / 10);
+        maxMp += (maxMp / 10);
+        strength++;
+        constitution++;
+        dexterity++;
+        magic++;
+        spirit++;
+        
+    }
+
+    void IncreaseStats(LeaderBuff buff, LeaderDebuff debuff)
+    {
+
     }
 }
 

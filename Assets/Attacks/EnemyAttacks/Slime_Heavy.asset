@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Heavy Slime
   levelRequired: 0
-  abValue: 10
-  mpCost: 0
+  abValue: 15
+  mpCost: 10
   abilityRange: 1
   abilityType: 0
   abilityOutput: 0

@@ -55,4 +55,21 @@ public class CombatStateMachine : StateMachine
             ChangeState(KO_State);
         }
     }
+
+    public void StartState()
+    {
+        if(unitData.curHp <= 0)
+        {
+            unitData.curHp = 1;
+        }
+        ChangeState(fightEnter_State);
+    }
+    public void IdleState()
+    {
+        ChangeState(idle_State);
+    }
+    public void WinState()
+    {
+        ChangeState(Win_State);
+    }
 }

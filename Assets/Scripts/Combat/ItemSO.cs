@@ -7,7 +7,7 @@ public class ItemSO : ScriptableObject
 {
     public string itemName = "Item";
     public Sprite itemSprite = null;
-
+    public bool isKey;
     public int itemValue;
     public int damage;
 

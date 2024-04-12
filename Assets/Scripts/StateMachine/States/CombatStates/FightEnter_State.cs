@@ -13,6 +13,11 @@ public class FightEnter_State : BaseState
     {
         base.Enter();
         _csm.characterControl.SetAnimationStoppedFalse();
+        if(_csm.unitData.curHp <=0)
+        {
+            _csm.unitData.curHp = 1;
+        }
+        _csm.animator.SetTrigger("FightStarted");
     }
 
     public override void UpdateLogic()

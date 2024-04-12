@@ -38,7 +38,7 @@ public class RandomEncounter : MonoBehaviour
     {
     }
 
-    IEnumerator StartFight(GameObject[] enemiesToSpawn)
+    public IEnumerator StartFight(GameObject[] enemiesToSpawn)
     {
         transitionScreen.SetActive(true);
         playerMSM.canMove = false;
@@ -54,6 +54,11 @@ public class RandomEncounter : MonoBehaviour
         FightManager.Instance.SpawnUI();
         openWorldMap.SetActive(false);
         transitionScreen.SetActive(false);
+        CombatStateMachine[] csms = FindObjectsOfType<CombatStateMachine>();
+        foreach (CombatStateMachine csm in csms)
+        {
+            csm.StartState();
+        }
     }
 
     IEnumerator EncounterCheck()
@@ -85,6 +90,7 @@ public class RandomEncounter : MonoBehaviour
         transitionScreen.SetActive(false);
         openWorldMap.SetActive(true);
         playerMSM.canMove = true;
+        FightManager.Instance.winScreen.SetActive(false);
     }
 
 }

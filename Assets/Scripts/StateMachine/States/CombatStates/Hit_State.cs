@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Hit_State : BaseState
 {
+    private CombatStateMachine _csm;
     public Hit_State(CombatStateMachine combatStateMachine) : base("Hit_State", combatStateMachine)
     {
+        _csm = (CombatStateMachine)combatStateMachine;
     }
     public override void Enter()
     {
         base.Enter();
 
-        //play hit animation
+        _csm.animator.SetTrigger("hit");
     }
 
     public override void UpdateLogic()

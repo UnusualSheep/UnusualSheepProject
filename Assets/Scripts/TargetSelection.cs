@@ -75,12 +75,12 @@ public class TargetSelection : MonoBehaviour
 
     void ChooseAllyTarget()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             targetIndex = (targetIndex + 1) % targetList.Count;
             fm.SetTargetGraphicPosition(targetList[targetIndex]);
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             if (targetIndex - 1 < 0)
             {

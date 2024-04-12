@@ -22,10 +22,18 @@ public class FightManager : MonoBehaviour
     [SerializeField] GameObject nameHolder;
     [SerializeField] GameObject rowHolder;
 
+    [SerializeField] GameObject winCamera;
+    [SerializeField] GameObject ui;
+    public GameObject winScreen;
+    public List<ItemSO> itemRewards;
+
+    public int xpReward = 0;
+    public int goldReward = 0;
     private void Awake()
     {
         Instance = this;
         currentUnit = null;
+        itemRewards = new List<ItemSO>();
         PopulateTeams();
         SpawnUI();
     }
@@ -105,7 +113,8 @@ public class FightManager : MonoBehaviour
             {
                 Destroy(c.transform.parent.gameObject);
             }
-            StartCoroutine(RandomEncounter.Instance.EndFight());
+            StartCoroutine(WinState());
+         //   StartCoroutine(RandomEncounter.Instance.EndFight());
 
         }
         if (PlayerDefeated && !EnemiesDefeated)
@@ -219,6 +228,33 @@ public class FightManager : MonoBehaviour
         {
             Destroy(characterControl.gameObject);
         }
+    }
+
+    IEnumerator WinState()
+    {
+        winCamera.SetActive(true);
+        ui.SetActive(false);
+        CombatStateMachine[] csms = FindObjectsOfType<CombatStateMachine>();
+        foreach (CombatStateMachine csm in csms)
+        {
+            if (csm.GetComponent<UnitData>().curHp > 0)
+            {
+                csm.WinState();
+            }
+        }
+        yield return new WaitForSeconds(1f);
+        winCamera.SetActive(false);
+        ui.SetActive(true);
+        winScreen.SetActive(true);
+        foreach (CombatStateMachine csm in csms)
+        {
+            if (csm.GetComponent<UnitData>().curHp <= 0)
+            {
+                csm.GetComponent<UnitData>().curHp = 1;
+            }
+        }
+
+            yield break;
     }
 
 }

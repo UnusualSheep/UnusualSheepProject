@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 7090685067380635505}
   - component: {fileID: 645983631800563159}
   - component: {fileID: 3350186227986387424}
+  - component: {fileID: 996279393540872126}
   m_Layer: 0
   m_Name: Character_Male_Rouge_01
   m_TagString: Untagged
@@ -1187,6 +1188,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57eb8f86ea66c14488eedfc1ad998465, type: 2}
   - {fileID: 11400000, guid: 8d3f8461bdb9a9247a8a7593d5cb9113, type: 2}
   - {fileID: 11400000, guid: 8d3f8461bdb9a9247a8a7593d5cb9113, type: 2}
+  selectedItem: {fileID: 0}
   _target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   hitSpot: {fileID: 1809859346611752703}
@@ -1204,8 +1206,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Bandit
   level: 1
-  curXp: 0
+  curXp: 25
   xpToLevel: 0
+  goldReward: 15
   maxHp: 50
   curHp: 50
   maxMp: 20
@@ -1215,6 +1218,11 @@ MonoBehaviour:
   dexterity: 5
   magic: 5
   spirit: 4
+  leaderBuff: 0
+  buffPercent: 0
+  leaderDebuff: 0
+  debuffPercent: 0
+  isLeader: 0
   burstPointLimit: 0
   currentBurstPoints: 100
   speedLimit: 3
@@ -1255,6 +1263,22 @@ MonoBehaviour:
   mainWeaponToActivate: {fileID: 3432432880592177101}
   secondaryWeaponToDraw: {fileID: 0}
   secondaryWeaponToActivate: {fileID: 0}
+--- !u!114 &996279393540872126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809111955934370690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29f87e9766227c409799bd718a8d1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemRewards:
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
+  - {fileID: 11400000, guid: a70155363f153c741baa69f5057a01e8, type: 2}
+  - {fileID: 11400000, guid: a70155363f153c741baa69f5057a01e8, type: 2}
 --- !u!1 &6809111955934376950
 GameObject:
   m_ObjectHideFlags: 0

@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 6951705455723446540}
   - component: {fileID: 6392812797914560169}
   - component: {fileID: 2745864532236211773}
+  - component: {fileID: 4824628407414536205}
   m_Layer: 0
   m_Name: TurtleShell
   m_TagString: Untagged
@@ -485,6 +486,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 701df4d53199fc749a2783f7770ce7b7, type: 2}
   - {fileID: 11400000, guid: 250c5704d304ac94bbc7ec9087d17dab, type: 2}
   - {fileID: 11400000, guid: 250c5704d304ac94bbc7ec9087d17dab, type: 2}
+  selectedItem: {fileID: 0}
   _target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   hitSpot: {fileID: 6983717147021661023}
@@ -502,8 +504,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Turtle
   level: 1
-  curXp: 0
+  curXp: 50
   xpToLevel: 0
+  goldReward: 10
   maxHp: 75
   curHp: 75
   maxMp: 20
@@ -513,6 +516,11 @@ MonoBehaviour:
   dexterity: 5
   magic: 5
   spirit: 1
+  leaderBuff: 0
+  buffPercent: 0
+  leaderDebuff: 0
+  debuffPercent: 0
+  isLeader: 0
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 4
@@ -537,6 +545,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0543314, z: 1}
   m_Center: {x: -0, y: 0.5134068, z: 0}
+--- !u!114 &4824628407414536205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6247664822287326103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29f87e9766227c409799bd718a8d1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemRewards:
+  - {fileID: 11400000, guid: a70155363f153c741baa69f5057a01e8, type: 2}
+  - {fileID: 11400000, guid: a70155363f153c741baa69f5057a01e8, type: 2}
+  - {fileID: 11400000, guid: a70155363f153c741baa69f5057a01e8, type: 2}
 --- !u!1 &6247697827341621307
 GameObject:
   m_ObjectHideFlags: 0

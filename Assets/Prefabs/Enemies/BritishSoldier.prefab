@@ -6167,6 +6167,7 @@ GameObject:
   - component: {fileID: 5530738178536532583}
   - component: {fileID: 5530738178536532578}
   - component: {fileID: 5530738178536532576}
+  - component: {fileID: 2083465631785852591}
   m_Layer: 0
   m_Name: Character_English_Soldier_01 (2)
   m_TagString: Untagged
@@ -6282,6 +6283,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb8444ba0eb640e47b505434b23a29da, type: 2}
   - {fileID: 11400000, guid: 269b05eb9b939a642a3332d37c6c0eb0, type: 2}
   - {fileID: 11400000, guid: 269b05eb9b939a642a3332d37c6c0eb0, type: 2}
+  selectedItem: {fileID: 0}
   _target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   hitSpot: {fileID: 2484937686810787637}
@@ -6299,8 +6301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: British Soldier
   level: 1
-  curXp: 0
+  curXp: 50
   xpToLevel: 0
+  goldReward: 50
   maxHp: 50
   curHp: 50
   maxMp: 10
@@ -6310,6 +6313,11 @@ MonoBehaviour:
   dexterity: 6
   magic: 5
   spirit: 4
+  leaderBuff: 0
+  buffPercent: 0
+  leaderDebuff: 0
+  debuffPercent: 0
+  isLeader: 0
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 3
@@ -6321,6 +6329,23 @@ MonoBehaviour:
   charControl: {fileID: 5530738178536532578}
   characterPortrait: {fileID: 0}
   damageFloatText: {fileID: 1367053276362633079}
+--- !u!114 &2083465631785852591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5530738178536532589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29f87e9766227c409799bd718a8d1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemRewards:
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
+  - {fileID: 11400000, guid: fb97c5c2156acee42bbb7adac9b0e66b, type: 2}
 --- !u!1 &5530738178542046089
 GameObject:
   m_ObjectHideFlags: 0

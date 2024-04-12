@@ -14,6 +14,8 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     public List<ItemArray> items;
+    [Space(10)]
+    public int gold;
 
 
     private void Awake()

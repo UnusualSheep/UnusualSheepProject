@@ -42,7 +42,11 @@ public class Movement_State : BaseState
         /*
         if (!_msm.characterController.isGrounded)
         {
-            _msm.animator.SetTrigger("Falling");
+            _msm.animator.SetBool("Falling", true);
+        }
+        else
+        {
+            _msm.animator.SetBool("Falling", false);
         }
         */
     }

@@ -47,7 +47,7 @@ public class InventoryMenu : MonoBehaviour
         {
             GameObject tempItemPrefab = Instantiate(itemUIPrefab);
             tempItemPrefab.transform.SetParent(itemUIHolder);
-            if(itemArray[i].item.itemType == ItemType.InCombat)
+            if(itemArray[i].item.itemType == ItemType.InCombat || itemArray[i].item.isKey)
             {
                 tempItemPrefab.GetComponent<Button>().interactable = false;
             }

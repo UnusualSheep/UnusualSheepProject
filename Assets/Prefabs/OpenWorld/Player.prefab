@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5181361258311686684}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,9 +79,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   characterController: {fileID: 5181361258311686687}
+  canMove: 1
   moveSpeed: 3
-  runSpeed: 5
-  gravity: 9.81
+  runSpeed: 10
+  gravity: 13
 --- !u!143 &5181361258311686687
 CharacterController:
   m_ObjectHideFlags: 0
@@ -149,6 +150,8 @@ MonoBehaviour:
       m_LegacyHeadingDefinition: 0
       m_LegacyVelocityFilterStrength: 0
   cameraFollowPosition: {fileID: 5181361257433006975}
+  movementStateMachine: {fileID: 5181361258311686657}
+  pauseMenu: {fileID: 0}
 --- !u!1 &5737602997769557437
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5737602997980352542
 Transform:
   m_ObjectHideFlags: 0
@@ -4021,8 +4024,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737602999520583806}
-  m_LocalRotation: {x: 0.2733387, y: -0.045081314, z: -0.07820405, w: -0.95767313}
-  m_LocalPosition: {x: -0.05714059, y: 3.9519699, z: -4.9454703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5737602998003634057}

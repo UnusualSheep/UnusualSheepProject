@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 7212458579840027015}
   - component: {fileID: 5359622160366409401}
   - component: {fileID: 4776219188459786695}
+  - component: {fileID: 4830160753066339218}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -472,6 +473,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11bd20694ebb5de4b8297c2403dc2600, type: 2}
   - {fileID: 11400000, guid: cadb146eb67905f4d922a2e3b46effad, type: 2}
   - {fileID: 11400000, guid: cadb146eb67905f4d922a2e3b46effad, type: 2}
+  selectedItem: {fileID: 0}
   _target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   hitSpot: {fileID: 8572625830041765171}
@@ -489,8 +491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Slime
   level: 1
-  curXp: 0
+  curXp: 20
   xpToLevel: 0
+  goldReward: 1
   maxHp: 30
   curHp: 30
   maxMp: 20
@@ -500,6 +503,11 @@ MonoBehaviour:
   dexterity: 4
   magic: 4
   spirit: 4
+  leaderBuff: 0
+  buffPercent: 0
+  leaderDebuff: 0
+  debuffPercent: 0
+  isLeader: 0
   burstPointLimit: 100
   currentBurstPoints: 100
   speedLimit: 2.5
@@ -524,6 +532,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0543314, z: 1}
   m_Center: {x: -0, y: 0.5134068, z: 0}
+--- !u!114 &4830160753066339218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87153225573162836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29f87e9766227c409799bd718a8d1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemRewards:
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
+  - {fileID: 11400000, guid: 983b21cb115a9d846ac57e5aa0015a3c, type: 2}
 --- !u!1 &87224213988505410
 GameObject:
   m_ObjectHideFlags: 0
