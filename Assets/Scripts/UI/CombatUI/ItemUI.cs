@@ -32,7 +32,6 @@ public class ItemUI : MonoBehaviour
             {
                 if (isSelected)
                 {
-                    Debug.Log("Selected");
                     FightManager.Instance.UseItem(inventory.items[i].item);
                 }
                 else

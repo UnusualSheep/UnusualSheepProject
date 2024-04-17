@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4e2b6952bc75d4c90b1cd0c4518335, type: 3}
+  m_Name: PirateKing_Basic
+  m_EditorClassIdentifier: 
+  abilityName: Axe Swing
+  levelRequired: 0
+  abValue: 10
+  mpCost: 0
+  abilityRange: 1
+  abilityType: 0
+  abilityOutput: 0
+  abilityTarget: 3
+  attackParticle: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b, type: 3}

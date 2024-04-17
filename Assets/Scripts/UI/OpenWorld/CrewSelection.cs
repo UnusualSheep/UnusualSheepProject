@@ -57,7 +57,6 @@ public class CrewSelection : MonoBehaviour
         selection.transform.position = crewButtonList[selectionIndex].transform.position;
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log(selectionIndex);
             if (crewButtonList[selectionIndex].IsInteractable())
             {
                 Destroy(selection.gameObject);

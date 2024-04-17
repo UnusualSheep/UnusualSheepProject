@@ -116,7 +116,6 @@ public class TargetSelection : MonoBehaviour
     }
     void ChooseEnemyTarget()
     {
-        Debug.Log(targetIndex);
         if (Input.GetKeyDown(KeyCode.A))
         {
             targetIndex = (targetIndex + 1) % fm.enemyCharacters.Count;

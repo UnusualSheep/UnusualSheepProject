@@ -12,12 +12,13 @@ public class TestingScript : MonoBehaviour
 
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.E))
         {
             RandomEncounter.Instance.encounterEnabled = true;
             RandomEncounter.Instance.encounterRate = 100;
         }
-
+        */
         if(!fightStage.activeSelf)
         {
             ManageHealth();

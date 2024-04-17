@@ -35,7 +35,6 @@ public class InventoryItemUI : MonoBehaviour
             {
                 if (isSelected)
                 {
-                    Debug.Log("Selected");
                     inventory.SelectTarget();
                 }
                 else

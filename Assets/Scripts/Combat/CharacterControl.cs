@@ -101,69 +101,7 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-    //    if(unitData.characterTeam == CharacterTeam.Friendly) { return; }
-      //  BattleManager.Instance.SelectCharacterTarget(characterData);
-        Debug.Log(gameObject.name + " has been Clicked");
-    }
-    /*
-    public IEnumerator AttackRandomFriendlyCharacter()
-    {
-        if(characterData.characterTeam == CharacterTeam.Enemy)
-        {
-            if(characterData.curHp <= 0)
-            {
-                characterData.characterState = CharacterState.KO;
-                yield break;
-            }
-            while (characterData.IsAlive)
-            {
-                yield return new WaitUntil(() => characterData.IsReadyForAction);
 
-                //Select Random Friendly target
-                while (characterData._target == null || characterData._target.characterState == CharacterState.KO)
-                {
-                    if (BattleManager.Instance.EnemyCharacterIsAlive)
-                    {
-                        characterData._target = BattleManager.Instance.RandomFriendlyCharacter.characterData;
-                        yield return null;
-                    }
-                    else
-                    {
-                        yield break;
-                    }
-                    yield return null;
-                }
-
-                yield return characterData.QueueAttack(characterData.basicAttack);
-
-                //This executes whenever queued attack has been finished
-                yield return null;
-            }
-        }
-    }
-    
-    public void StopAll()
-    {
-        if (characterBaseLoop != null)
-        {
-            StopCoroutine(characterBaseLoop);
-        }
-        if (attackQueue != null)
-        {
-            StopCoroutine(attackQueue);
-        }
-        if (enemyAttackBehaviour != null)
-        {
-            StopCoroutine(enemyAttackBehaviour);
-        }
-        characterBaseLoop = null;
-        attackQueue = null;
-        enemyAttackBehaviour = null;
-      //  characterData.characterState = CharacterState.Finished;
-    }
-    */
 
 
 

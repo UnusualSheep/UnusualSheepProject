@@ -72,7 +72,6 @@ public class PauseScreen : MonoBehaviour
         selection.transform.position = pauseButtonList[selectionIndex].transform.position;
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log(selectionIndex);
             if (pauseButtonList[selectionIndex].IsInteractable())
             {
                 isMainPage = false;

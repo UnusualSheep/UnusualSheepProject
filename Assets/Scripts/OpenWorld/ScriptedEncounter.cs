@@ -35,8 +35,20 @@ public class ScriptedEncounter : MonoBehaviour
         PlayerInteractUI.Instance.ShowDialoguePanel("Hand over your gold!", "Bandit", banditImage);
         yield return new WaitForSeconds(1.5f);
         PlayerInteractUI.Instance.HideDialoguePanel();
+       // RandomEncounter.Instance.encounterEnabled = true;
         StartCoroutine(RandomEncounter.Instance.StartFight(enemyArray.enemies));
 
     }
-
+    private void OnDisable()
+    {
+        DestroyAll();
+    }
+    void DestroyAll()
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+        Destroy(gameObject);
+    }
 }

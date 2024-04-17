@@ -42,27 +42,23 @@ public class FightManager : MonoBehaviour
     {
         if (currentUnit == null || currentUnit.GetComponent<CombatStateMachine>().currentState == null) { return; }
         currentUnit.charControl.selectedAttack = currentUnit.charControl.basicAttack;
-        Debug.Log(currentUnit.name + " Selected: " + currentUnit.charControl.selectedAttack.name);
         SelectTarget();
     }
     public void DoBurstAttack()
     {
         if (currentUnit == null || currentUnit.GetComponent<CombatStateMachine>().currentState == null) { return; }
         currentUnit.charControl.selectedAttack = currentUnit.charControl.burstAttack;
-        Debug.Log(currentUnit.name + " Selected: " + currentUnit.charControl.selectedAttack.name);
         SelectTarget();
     }
 
     public void DoAbility(AbiltySO abiltySO)
     {
         currentUnit.charControl.selectedAttack = abiltySO;
-        Debug.Log(currentUnit.name + " Selected: " + currentUnit.charControl.selectedAttack.name);
         SelectTarget();
     }
     public void UseItem(ItemSO itemSO)
     {
         currentUnit.charControl.selectedItem = itemSO;
-        Debug.Log(currentUnit.name + " Selected: " + currentUnit.charControl.selectedAttack.name);
         SelectItemTarget();
     }
 
@@ -106,20 +102,15 @@ public class FightManager : MonoBehaviour
     {        
         if (!PlayerDefeated && EnemiesDefeated)
         {
-            Debug.Log("Fight Won!");
             GlobalTimeManager.Instance.globalTimeScale = 0;
-            //  UnityEngine.SceneManagement.SceneManager.LoadScene(2);
             foreach(CharacterControl c in deadEnemies)
             {
                 Destroy(c.transform.parent.gameObject);
             }
             StartCoroutine(WinState());
-         //   StartCoroutine(RandomEncounter.Instance.EndFight());
-
         }
         if (PlayerDefeated && !EnemiesDefeated)
         {
-            Debug.Log("Fight Lost!");
             GlobalTimeManager.Instance.globalTimeScale = 0;
             UnityEngine.SceneManagement.SceneManager.LoadScene(2);
         }
@@ -199,7 +190,6 @@ public class FightManager : MonoBehaviour
         foreach(var character in friendlyCharacters)
         {
             character.GetComponent<UnitData>().GetLeaderBonus(leaderUnit.leaderBuff, leaderUnit.leaderDebuff, leaderUnit.buffPercent, leaderUnit.debuffPercent);
-            Debug.Log(character.name + character.GetComponent<UnitData>().dexterityBouns);
         }
     }
     public void SpawnUI()

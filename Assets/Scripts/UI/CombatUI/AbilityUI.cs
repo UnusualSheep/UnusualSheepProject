@@ -30,7 +30,6 @@ public class AbilityUI : MonoBehaviour
             {
                 if (isSelected)
                 {
-                    Debug.Log("Selected");
                     FightManager.Instance.DoAbility(data.charControl.abilities[i]);
                 }
                 else

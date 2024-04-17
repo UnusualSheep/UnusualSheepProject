@@ -42,7 +42,7 @@ public class RandomEncounter : MonoBehaviour
     {
         transitionScreen.SetActive(true);
         playerMSM.canMove = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         fightMap.SetActive(true);
         for (int i = 0; i < enemiesToSpawn.Length; i++)
         {
@@ -84,11 +84,12 @@ public class RandomEncounter : MonoBehaviour
 
     public IEnumerator EndFight()
     {
+        openWorldMap.SetActive(true);
+
         transitionScreen.SetActive(true);
         yield return new WaitForSeconds(1);
-        fightMap.SetActive(false);
         transitionScreen.SetActive(false);
-        openWorldMap.SetActive(true);
+               fightMap.SetActive(false);
         playerMSM.canMove = true;
         FightManager.Instance.winScreen.SetActive(false);
     }

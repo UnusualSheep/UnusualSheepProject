@@ -129,8 +129,8 @@ public class WinScreenUI : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
+            RandomEncounter.Instance.encounterEnabled = true;
             StartCoroutine(RandomEncounter.Instance.EndFight());
-
         }
     }
 }

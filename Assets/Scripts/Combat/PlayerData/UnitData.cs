@@ -202,7 +202,6 @@ public class UnitData : MonoBehaviour
                 }
                 break;
         }
-        Debug.Log("D = " + d);
         return Mathf.FloorToInt(d * modifier);
     }
     public void EnemyAttack()
@@ -214,7 +213,6 @@ public class UnitData : MonoBehaviour
             if (character.GetComponent<CombatStateMachine>().currentState != character.GetComponent<CombatStateMachine>().KO_State)
             {
                 targetList.Add(character);
-                Debug.Log("character: " + character.name + "! State: " + character.GetComponent<CombatStateMachine>().currentState);
             }
 
         }
@@ -225,7 +223,6 @@ public class UnitData : MonoBehaviour
         int allyToTarget = Random.Range(0, targetList.Count);
         charControl._target = targetList[allyToTarget];
             //FightManager.Instance.friendlyCharacters[allyToTarget];
-        Debug.Log(characterName + " is attacking: " + charControl._target.GetComponent<UnitData>().characterName);
         charControl.selectedAttack = charControl.abilities[Random.Range(0, charControl.abilities.Length)];
         while(curMp < charControl.selectedAttack.mpCost)
         {
@@ -300,10 +297,6 @@ public class UnitData : MonoBehaviour
         
     }
 
-    void IncreaseStats(LeaderBuff buff, LeaderDebuff debuff)
-    {
-
-    }
 }
 
 [System.Serializable]

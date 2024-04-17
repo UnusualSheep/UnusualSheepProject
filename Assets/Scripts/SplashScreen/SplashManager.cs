@@ -15,7 +15,7 @@ public class SplashManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         audioSource.Play();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(1);
     }
 }

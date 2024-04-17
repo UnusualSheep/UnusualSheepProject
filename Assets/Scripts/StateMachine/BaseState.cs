@@ -11,7 +11,7 @@ public class BaseState
         this.name = name;
         this.stateMachine = stateMachine;
     }
-    public virtual void Enter() { Debug.Log("Entered new state: " + name); }
+    public virtual void Enter() {}
     public virtual void UpdateLogic() {}
     public virtual void UpdatePhysics() { }
     public virtual void Exit() {}

@@ -25,6 +25,7 @@ public class ActionSelectionScript : MonoBehaviour
         selection.transform.localScale = new Vector3(1, 1, 1);
     }
 
+
     private void Update()
     {
         SelectorPosition();
@@ -52,10 +53,10 @@ public class ActionSelectionScript : MonoBehaviour
         selection.transform.position = actionButtons[selectionIndex].transform.position;
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log(selectionIndex);
-            if (actionButtons[selectionIndex].IsInteractable())
+           if (actionButtons[selectionIndex].IsInteractable())
             {
                 actionButtons[selectionIndex].onClick.Invoke();
+                selectionIndex = 0;
             }
         }
     }
