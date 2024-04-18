@@ -13,6 +13,9 @@ public class RandomEncounter : MonoBehaviour
     [SerializeField] GameObject transitionScreen;
 
 
+    float bufferCount = 0;
+    float bufferTrigger = 2;
+
     [System.Serializable]
     public class EnemyArray
     {
@@ -31,11 +34,26 @@ public class RandomEncounter : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        StartCoroutine(EncounterCheck());
     }
 
     private void Update()
     {
+        if (encounterEnabled)
+        {
+            if (player.velocity.x > 0 || player.velocity.z > 0)
+            {
+                if (bufferCount > bufferTrigger)
+                {
+                    bufferCount = 0;
+                    bufferTrigger = Random.Range(2, 5);
+                    EncounterCheck();
+                }
+                else
+                {
+                    bufferCount += Time.deltaTime;
+                }
+            }
+        }
     }
 
     public IEnumerator StartFight(GameObject[] enemiesToSpawn)
@@ -61,26 +79,17 @@ public class RandomEncounter : MonoBehaviour
         }
     }
 
-    IEnumerator EncounterCheck()
+    void EncounterCheck()
     {
-        while (true)
+        if (Random.Range(1, 101) < encounterRate)
         {
-            yield return new WaitForSeconds(1);
-            if (encounterEnabled)
-            {
-                if (player.velocity.x > 0 || player.velocity.z > 0)
-                {
-                    //check if moving
-                    if (Random.Range(1, 101) < encounterRate)
-                    {
-                        int enemyGroupIndex = Random.Range(0, enemiesArray.Length);
-                        StartCoroutine(StartFight(enemiesArray[enemyGroupIndex].enemies));
-                        encounterEnabled = false;
-                    }
-                }
-            }
+            int enemyGroupIndex = Random.Range(0, enemiesArray.Length);
+            StartCoroutine(StartFight(enemiesArray[enemyGroupIndex].enemies));
+            encounterEnabled = false;
         }
-    } 
+    }
+            
+
 
     public IEnumerator EndFight()
     {
@@ -89,7 +98,7 @@ public class RandomEncounter : MonoBehaviour
         transitionScreen.SetActive(true);
         yield return new WaitForSeconds(1);
         transitionScreen.SetActive(false);
-               fightMap.SetActive(false);
+        fightMap.SetActive(false);
         playerMSM.canMove = true;
         FightManager.Instance.winScreen.SetActive(false);
     }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Heavy Rifle Shot
   levelRequired: 0
-  abValue: 30
+  abValue: 20
   mpCost: 10
   abilityRange: 0
   abilityType: 0
