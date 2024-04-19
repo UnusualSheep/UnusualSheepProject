@@ -11,9 +11,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     [SerializeField] bool leadsToCombat = false;
     [Space(10)]
     [Header("Dialogue variables")]
-    [SerializeField] string npcName;
-    [SerializeField] Sprite npcImage;
-    [SerializeField] string[] dialogueText;
+    [SerializeField] IntroScript.Dialogue[] dialogues;
     int dialogueIndex = 0;
 
 
@@ -45,7 +43,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     {
         playerMSM.canMove = false;
         animator.SetTrigger("Talk");
-        PlayerInteractUI.Instance.ShowDialoguePanel(dialogueText[dialogueIndex], npcName, npcImage);
+        PlayerInteractUI.Instance.ShowDialoguePanel(dialogues[dialogueIndex].dialogue, dialogues[dialogueIndex].charName, dialogues[dialogueIndex].charImage);
         chatOpen = true;
     }
     void StopDialogue()
@@ -64,10 +62,11 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         {
             if (Input.GetKeyUp(KeyCode.Return))
             {
-                if (dialogueIndex < dialogueText.Length - 1)
+                if (dialogueIndex < dialogues.Length - 1)
                 {
                     dialogueIndex++;
-                    PlayerInteractUI.Instance.ShowDialoguePanel(dialogueText[dialogueIndex], npcName, npcImage);
+                    playerMSM.canMove = false;
+                    PlayerInteractUI.Instance.ShowDialoguePanel(dialogues[dialogueIndex].dialogue, dialogues[dialogueIndex].charName, dialogues[dialogueIndex].charImage);
                 }
                 else
                 {

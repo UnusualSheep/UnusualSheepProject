@@ -289,6 +289,8 @@ public class UnitData : MonoBehaviour
         //Temp Level up
         maxHp += (maxHp / 10);
         maxMp += (maxMp / 10);
+        curHp = maxHp;
+        curMp = maxMp;
         strength++;
         constitution++;
         dexterity++;

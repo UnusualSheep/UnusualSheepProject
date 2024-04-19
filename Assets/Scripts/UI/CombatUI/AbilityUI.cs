@@ -30,7 +30,10 @@ public class AbilityUI : MonoBehaviour
             {
                 if (isSelected)
                 {
-                    FightManager.Instance.DoAbility(data.charControl.abilities[i]);
+                    if (data.curMp >= data.charControl.abilities[i].mpCost)
+                    {
+                        FightManager.Instance.DoAbility(data.charControl.abilities[i]);
+                    }
                 }
                 else
                 {

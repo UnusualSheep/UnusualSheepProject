@@ -20,6 +20,7 @@ public class IntroScript : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         playerMSM = FindObjectOfType<MovementStateMachine>();
         playerMSM.canMove = false;
         ShowDialogue(dialogues[dialogueIndex].dialogue, dialogues[dialogueIndex].charName, dialogues[dialogueIndex].charImage);

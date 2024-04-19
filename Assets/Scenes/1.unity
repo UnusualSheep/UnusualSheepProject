@@ -4118,7 +4118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122262669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.100006, y: 2.532, z: 15.030001}
+  m_LocalPosition: {x: 129.93, y: 2.54, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1882258805}
@@ -6292,9 +6292,7 @@ MonoBehaviour:
   interactText: Talk with Bandit
   animator: {fileID: 30592971}
   leadsToCombat: 0
-  npcName: 
-  npcImage: {fileID: 0}
-  dialogueText: []
+  dialogues: []
 --- !u!1001 &190522606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23214,10 +23212,13 @@ MonoBehaviour:
   interactText: Talk
   animator: {fileID: 732160215}
   leadsToCombat: 1
-  npcName: Bandit
-  npcImage: {fileID: 21300000, guid: 0b45c951ae36d3f4ca1fd6ac0c466c9d, type: 3}
-  dialogueText:
-  - What are you doing here?
+  dialogues:
+  - charImage: {fileID: 21300000, guid: 0b45c951ae36d3f4ca1fd6ac0c466c9d, type: 3}
+    charName: Bandit
+    dialogue: What are you doing here?
+  - charImage: {fileID: 21300000, guid: fdce6e72ed1e85747b1b3db23e26f564, type: 3}
+    charName: Ruby
+    dialogue: Why is everyone so unhappy to see us?
 --- !u!136 &724795424
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26584,6 +26585,114 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5345095905675400941, guid: 996674d152804e34b81f64b729080765, type: 3}
   m_PrefabInstance: {fileID: 5345095906024714974}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &755021516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 755021517}
+  - component: {fileID: 755021521}
+  - component: {fileID: 755021520}
+  - component: {fileID: 755021519}
+  - component: {fileID: 755021518}
+  m_Layer: 0
+  m_Name: TurnEncountersOff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &755021517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755021516}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.975861, y: -7.1388, z: 95.92127}
+  m_LocalScale: {x: 82.46009, y: 10.9482155, z: 41.24325}
+  m_Children: []
+  m_Father: {fileID: 1414418344}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755021518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755021516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2207f11c4186284e99e557984979ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &755021519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755021516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &755021520
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755021516}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &755021521
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755021516}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &757899487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 461704, guid: d9a079c452b648a4cbefe15bb9c53316, type: 3}
@@ -34927,9 +35036,7 @@ MonoBehaviour:
   interactText: Talk with Bandit
   animator: {fileID: 1878086748}
   leadsToCombat: 0
-  npcName: 
-  npcImage: {fileID: 0}
-  dialogueText: []
+  dialogues: []
 --- !u!1 &994749604
 GameObject:
   m_ObjectHideFlags: 0
@@ -38237,7 +38344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109701232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.100006, y: 2.532, z: 15.030001}
+  m_LocalPosition: {x: 129.93, y: 2.54, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 322959448}
@@ -44327,7 +44434,7 @@ MonoBehaviour:
     - {fileID: 5530738177954765463, guid: 9525a65ddc749b446b0d1323b6000be1, type: 3}
     - {fileID: 5530738177954765463, guid: 9525a65ddc749b446b0d1323b6000be1, type: 3}
     - {fileID: 5530738177954765463, guid: 9525a65ddc749b446b0d1323b6000be1, type: 3}
-  encounterRate: 25
+  encounterRate: 10
   encounterEnabled: 0
 --- !u!4 &1323948005
 Transform:
@@ -46630,6 +46737,70 @@ PrefabInstance:
       propertyPath: enemyArray.enemies.Array.data[3]
       value: 
       objectReference: {fileID: 5530738177954765463, guid: 9525a65ddc749b446b0d1323b6000be1, type: 3}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Pirate King
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: Who the hell are you?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Jade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: Our ship wrecked off the coast, we came in serch of parts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[2].charName
+      value: Pirate King
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: Looking for repairs for your ship? Well you've found something.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[3].charName
+      value: Jade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[3].dialogue
+      value: Oh yeah? What's that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[4].charName
+      value: Pirate King
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[4].dialogue
+      value: You've found your DEATH!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fb15d4ba9b097fc4d9787be2acbe4f5b, type: 3}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 3087d0a36212d574dab2161726278761, type: 3}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[2].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fb15d4ba9b097fc4d9787be2acbe4f5b, type: 3}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[3].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 3087d0a36212d574dab2161726278761, type: 3}
+    - target: {fileID: 6366923540090394036, guid: c821cdabe28877842b2f6ed547634534, type: 3}
+      propertyPath: dialogues.Array.data[4].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fb15d4ba9b097fc4d9787be2acbe4f5b, type: 3}
     - target: {fileID: 6696627477559205817, guid: c821cdabe28877842b2f6ed547634534, type: 3}
       propertyPath: m_Name
       value: PirateKing
@@ -48597,6 +48768,7 @@ Transform:
   m_Children:
   - {fileID: 2102411884}
   - {fileID: 1060398004}
+  - {fileID: 755021517}
   m_Father: {fileID: 1637944499}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48968,6 +49140,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2102411884}
     m_Modifications:
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: 'The boss is inside. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 96311b521a5477e4b8453c0eac490fc6, type: 3}
     - target: {fileID: 6513464565224178956, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
       propertyPath: m_Name
       value: Guard (1)
@@ -53766,6 +53954,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
       propertyPath: dialogueText.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -53774,6 +53966,43 @@ PrefabInstance:
       value: By fighting us, and some of the guys in camp, you can level up for the
         boss
       objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Deck Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: By fighting us, and some of the guys in camp, you can level up for the
+        boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Ruby
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: Wow, that's really helpful.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[2].charName
+      value: Deck Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: Yeah, HE wanted you to be prepared
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fdce6e72ed1e85747b1b3db23e26f564, type: 3}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[2].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
     - target: {fileID: 7059240320384419135, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
       propertyPath: m_Name
       value: JustAGuy (1)
@@ -56541,6 +56770,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2102411884}
     m_Modifications:
     - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
       propertyPath: dialogueText.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -56554,6 +56787,45 @@ PrefabInstance:
       value: Forgive the lackluster encampment. I wanted it to be more ready for
         you..
       objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: Forgive the lackluster encampment. I wanted it to be more ready for
+        you..
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Ruby
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: Hey, don't worry about it. I'm sure the work you've done behind the
+        scenes is great.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[2].charName
+      value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: Wow! I sure hope anyone looking at this area from the outside is as
+        nice as you!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 96311b521a5477e4b8453c0eac490fc6, type: 3}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fdce6e72ed1e85747b1b3db23e26f564, type: 3}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[2].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 96311b521a5477e4b8453c0eac490fc6, type: 3}
     - target: {fileID: 6513464565224178956, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
       propertyPath: m_Name
       value: Guard (2)
@@ -61233,6 +61505,7 @@ Transform:
   - {fileID: 1763202181}
   - {fileID: 1727929917}
   - {fileID: 1213956737}
+  - {fileID: 1973658722}
   m_Father: {fileID: 1637944499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70076,6 +70349,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
+--- !u!1001 &1973658721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1691613945}
+    m_Modifications:
+    - target: {fileID: 169740, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_Name
+      value: SM_Veh_Boat_Rowing_01_Hull_Pirate
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99965024
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.026448548
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+--- !u!4 &1973658722 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 493140, guid: a214d3d69712d434b9392b0f6b8f92c4, type: 3}
+  m_PrefabInstance: {fileID: 1973658721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1976096945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 444698, guid: a1f656c69d2080948aa8bcd6456962b9, type: 3}
@@ -70880,15 +71215,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5181361258311686686, guid: 4ec934a3f7c8f9c40a7e9fab55bcab65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 121.1
+      value: 129.93
       objectReference: {fileID: 0}
     - target: {fileID: 5181361258311686686, guid: 4ec934a3f7c8f9c40a7e9fab55bcab65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.452
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 5181361258311686686, guid: 4ec934a3f7c8f9c40a7e9fab55bcab65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.2
+      value: 10.17
       objectReference: {fileID: 0}
     - target: {fileID: 5181361258311686686, guid: 4ec934a3f7c8f9c40a7e9fab55bcab65, type: 3}
       propertyPath: m_LocalRotation.w
@@ -86418,6 +86753,34 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 751969331}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Bandit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: You shouldn't be here. The boss won't like it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Jade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: Oh no. Maybe we should kill you so you can't tell him.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b45c951ae36d3f4ca1fd6ac0c466c9d, type: 3}
+    - target: {fileID: 5345095905684829730, guid: 996674d152804e34b81f64b729080765, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 3087d0a36212d574dab2161726278761, type: 3}
     - target: {fileID: 5345095905684829735, guid: 996674d152804e34b81f64b729080765, type: 3}
       propertyPath: m_Name
       value: Bandit
@@ -86811,9 +87174,7 @@ MonoBehaviour:
   interactText: Talk with Bandit
   animator: {fileID: 6809111955684771006}
   leadsToCombat: 0
-  npcName: 
-  npcImage: {fileID: 0}
-  dialogueText: []
+  dialogues: []
 --- !u!65 &5530738178196940131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86834,6 +87195,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2102411884}
     m_Modifications:
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: 'The boss is inside. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317065108188141225, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 96311b521a5477e4b8453c0eac490fc6, type: 3}
     - target: {fileID: 6513464565224178956, guid: ad04fbba38bf5fc49b416212714edb4d, type: 3}
       propertyPath: m_Name
       value: Guard
@@ -89304,6 +89681,46 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Shop Keep
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: Hello, I'm still setting up my store.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Ruby
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: But, we need supplies now.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[2].charName
+      value: Shop Keep
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: Please come back later.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 8abfe7568df975a408022128baba5ebd, type: 3}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: fdce6e72ed1e85747b1b3db23e26f564, type: 3}
+    - target: {fileID: 6555515847801688543, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
+      propertyPath: dialogues.Array.data[2].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 8abfe7568df975a408022128baba5ebd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cecd079fd6fa6c34c8ee2f2133d90997, type: 3}
 --- !u!1 &6767634421000824194
@@ -98129,6 +98546,50 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: Hey there! I am just a guy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Furious Bryan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: Hey there Guy. We're looking for parts to repair our ship.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[2].charName
+      value: Guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: You should look for the boss.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d9ec2161ae23994fa26eaf956491d48, type: 3}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[2].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
+    - target: {fileID: 7059240320384419134, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
+      propertyPath: dialogues.Array.data[3].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
     - target: {fileID: 7059240320384419135, guid: 4f3f1057635c1a946b31cd46bdef7f4a, type: 3}
       propertyPath: m_Name
       value: JustAGuy
@@ -99322,6 +99783,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2102411884}
     m_Modifications:
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[0].charName
+      value: Gate Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[0].dialogue
+      value: This is where you would go after defeating the boss of this area.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[1].charName
+      value: Jade
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[1].dialogue
+      value: You should let us pass.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[2].charName
+      value: Gate Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[2].dialogue
+      value: This area is closed in the Demo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[0].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[1].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 3087d0a36212d574dab2161726278761, type: 3}
+    - target: {fileID: 7522515599810775243, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
+      propertyPath: dialogues.Array.data[2].charImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c13b6897ccd96b49b49123875e540c7, type: 3}
     - target: {fileID: 7522515599810775245, guid: 51c4095e4f481934d9c80ebbe25d7fee, type: 3}
       propertyPath: m_RootOrder
       value: 7
